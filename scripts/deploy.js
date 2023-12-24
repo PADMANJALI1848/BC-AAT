@@ -17,51 +17,74 @@ async function main() {
 
   console.log(`Deployed TokenMaster Contract at: ${tokenMaster.address}\n`)
 
-  // List 6 events
   const occasions = [
     {
-      name: "UFC Miami",
-      cost: tokens(3),
-      tickets: 0,
-      date: "May 31",
-      time: "6:00PM EST",
-      location: "Miami-Dade Arena - Miami, FL"
-    },
-    {
-      name: "ETH Tokyo",
-      cost: tokens(1),
-      tickets: 125,
-      date: "Jun 2",
-      time: "1:00PM JST",
-      location: "Tokyo, Japan"
-    },
-    {
-      name: "ETH Privacy Hackathon",
-      cost: tokens(0.25),
-      tickets: 200,
-      date: "Jun 9",
-      time: "10:00AM TRT",
-      location: "Turkey, Istanbul"
-    },
-    {
-      name: "Dallas Mavericks vs. San Antonio Spurs",
-      cost: tokens(5),
-      tickets: 0,
-      date: "Jun 11",
-      time: "2:30PM CST",
-      location: "American Airlines Center - Dallas, TX"
-    },
-    {
-      name: "ETH Global Toronto",
+      name: "Mic Testing - Kannada Open Mics",
       cost: tokens(1.5),
       tickets: 125,
-      date: "Jun 23",
-      time: "11:00AM EST",
-      location: "Toronto, Canada"
-    }
+      date: "Dec 27 2023",
+      time: "6:00PM",
+      location: "The Art Gully Studio , Bengaluru"
+    },
+    {
+      name: "Candlelight India A Tribute to Coldplay ",
+      cost: tokens(1),
+      tickets: 125,
+      date: "Dec 29 2023",
+      time: "7:30PM",
+      location: "Good Shepherd Auditorium , Bengaluru"
+    },
+    {
+      name: "Small World Big Jokes",
+      cost: tokens(5),
+      tickets: 0,
+      date: "Dec 31 2023",
+      time: "4:00PM",
+      location: "Koramangala 5th Block , Bengaluru"
+    },
+    {
+      name: "Hawaain Paradise 2024 New Yeras Eve",
+      cost: tokens(3.5),
+      tickets: 120,
+      date: "Dec 31 2023",
+      time: "8:00PM",
+      location: "Tiger Tiger Brewhouse , Bengaluru"
+    },
+    {
+      name: "Kanan Gill Experience - 2024",
+      cost: tokens(1),
+      tickets: 125,
+      date: "Jan 19 2024",
+      time: "7:30PM",
+      location: "Good Shepherd Hall , Convent Road , Bengaluru"
+    },
+    {
+      name: "Udupa Music Festival 2024",
+      cost: tokens(3),
+      tickets: 0,
+      date: "Feb 16 2024",
+      time: "6:00PM",
+      location: "Chowdiah Memorial Hall , Bengaluru"
+    },
+    {
+      name: "Lucky Ali Live",
+      cost: tokens(0.25),
+      tickets: 200,
+      date: "Feb 17 2024",
+      time: "7:00PM",
+      location: "Manpho Convention Centre , Bengaluru"
+    },
+    {
+      name: "Darshan Raval India Tour",
+      cost: tokens(2.5),
+      tickets: 200,
+      date: "Mar 16 2024",
+      time: "5:00PM",
+      location: "Bengaluru"
+    },
   ]
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 8; i++) {
     const transaction = await tokenMaster.connect(deployer).list(
       occasions[i].name,
       occasions[i].cost,
